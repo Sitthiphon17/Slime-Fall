@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Slime Fall</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-wrapper">
+
+        <!-- HUD -->
+        <div class="hud hidden" id="hud">
+            <div class="hud-box">
+                ❤️ <span id="lives">3</span>
+            </div>
+
+            <div class="hud-box">
+                SCORE <span id="score">0</span>
+            </div>
+
+            <div class="hud-box">
+                BEST <span id="best">0</span>
+            </div>
+        </div>
+
+        <!-- GAME -->
+        <div class="game-container">
+
+            <canvas id="gameCanvas"></canvas>
+
+            <!-- Start Screen -->
+            <div id="startScreen" class="screen start-screen">
+
+                <!-- decoration layer -->
+                <div class="sky-decor">
+
+                    <div class="island island-1">
+                        <div class="island-top"></div>
+                        <div class="island-rock"></div>
+                        <div class="island-fall"></div>
+                    </div>
+
+                    <div class="island island-2">
+                        <div class="island-top"></div>
+                        <div class="island-rock"></div>
+                        <div class="island-fall"></div>
+                    </div>
+
+                    <div class="island island-3">
+                        <div class="island-top"></div>
+                        <div class="island-rock"></div>
+                    </div>
+
+                    <div class="island island-4">
+                        <div class="island-top"></div>
+                        <div class="island-rock"></div>
+                        <div class="island-fall"></div>
+                    </div>
+
+                    <div class="cloud-decor c1"></div>
+                    <div class="cloud-decor c2"></div>
+                    <div class="cloud-decor c3"></div>
+
+                    <div class="falling-rock r1"><span class="trail"></span></div>
+                    <div class="falling-rock r2"><span class="trail"></span></div>
+                    <div class="falling-rock r3"><span class="trail"></span></div>
+                    <div class="falling-rock r4"><span class="trail"></span></div>
+                    <div class="falling-rock r5"><span class="trail"></span></div>
+
+                    <div class="bird bird-1">〜</div>
+                    <div class="bird bird-2">〜</div>
+
+                    <div class="hill">
+                        <span class="flower f1"></span>
+                        <span class="flower f2"></span>
+                        <span class="flower f3"></span>
+                        <span class="flower f4"></span>
+                        <span class="flower f5"></span>
+                    </div>
+
+                    <div class="bush bush-left"></div>
+                    <div class="bush bush-right"></div>
+
+                </div>
+
+                <!-- content layer -->
+                <div class="start-content">
+
+                    <div class="logo">
+                        <h1>SLIME <span>FALL</span></h1>
+                        <p>หลบสิ่งที่ตกลงมาจากท้องฟ้า!</p>
+                    </div>
+
+                    <div class="mascot">
+                        <div class="mascot-body">
+                            <span class="shine"></span>
+                            <span class="eye l"></span>
+                            <span class="eye r"></span>
+                            <span class="cheek l"></span>
+                            <span class="cheek r"></span>
+                            <span class="mouth"></span>
+                        </div>
+                    </div>
+
+                    <button id="startBtn">▶ เริ่มเกม</button>
+
+                    <div class="controls">
+                        <span>← →</span>
+                        <small>หรือ A / D เพื่อเคลื่อนที่</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Game Over -->
+            <div id="gameOverScreen" class="screen hidden">
+
+                <div class="game-over-icon">💥</div>
+
+                <h2>GAME OVER</h2>
+
+                <p>คะแนนของคุณ</p>
+
+                <div class="final-score" id="finalScore">
+                    0
+                </div>
+
+                <p id="newBest" class="new-best hidden">
+                    🏆 NEW HIGH SCORE!
+                </p>
+
+                <button id="restartBtn">
+                    🔄 PLAY AGAIN
+                </button>
+
+                <button id="homeBtn" class="secondary-btn">
+                    🏠 HOME
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile Controls -->
+        <div class="mobile-controls">
+
+            <button id="leftBtn">
+                ◀
+            </button>
+
+            <button id="rightBtn">
+                ▶
+            </button>
+
+        </div>
+
+        <div class="bottom-info">
+            หลบก้อนหินให้นานที่สุด!
+        </div>
+
+    </div>
+
+    <script src="game.js"></script>
+
+</body>
+</html>
